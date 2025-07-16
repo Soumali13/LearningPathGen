@@ -94,7 +94,7 @@ def call_gemini_for_rich_kg():
         "The output should be a JSON object with concept names as keys and the above fields as values. "
         "**Only include real, existing resources with accurate URLs. Do not invent or hallucinate resources.**"
     )
-    api_key = "AIzaSyDoCNYecUmxS4FkwRvr7ESnQWL7Ju8QxI0"
+    api_key = "API Key Here"  # Replace with your actual API key
     api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
     chat_history = [{"role": "user", "parts": [{"text": prompt}]}]
     payload = {
