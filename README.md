@@ -52,7 +52,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 /generate_knowledge_graph (POST)
 ```
 Description: Generates a knowledge graph for a given topic.
-Request Body:
+```bash
 Response:
 {
   "topic": "Machine Learning"
@@ -66,9 +66,12 @@ Response:
     }
   }
 }
-
+```
+```bash
 /generate_path (POST)
+```
 Description: Generates a learning path based on user input and the knowledge graph.
+```bash
 Request Body:
 {
   "goal": "Understand Deep Learning",
@@ -79,7 +82,7 @@ Request Body:
 {
   "path": ["Supervised Learning", "Deep Learning Basics"]
 }
-
+```
 ## File Structure
 - learning_path_advanced.py: Main application file.
 - requirements.txt: Dependencies for the project.
