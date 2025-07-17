@@ -348,5 +348,41 @@ def build_gemini_prompt(goal: str, user_known_concepts: set, user_struggling_con
     """
     return prompt
 
+@app.route('/chat', methods=['POST'])
+def chat_endpoint():
+    """
+    API endpoint to handle chat interactions with Gemini.
+    """
+    data = request.get_json()
+    question = data.get('question', '').strip()
+
+    if not question:
+        return jsonify({"error": "Question is required."}), 400
+
+    print(f"Received chat question: {question}")
+
+    chat_prompt = f"""
+        You are an AI assistant named Gemini. Answer the user's question based on your knowledge graph and expertise.
+        Provide concise and accurate answers. If the question is unclear, ask for clarification.
+
+        **User's Question:** {question}
+    """
+
+    chat_schema = {
+        "type": "OBJECT",
+        "properties": {
+            "answer": {"type": "STRING"}
+        },
+        "required": ["answer"]
+    }
+
+    chat_result = call_gemini_api(chat_prompt, chat_schema)
+
+    if chat_result and 'answer' in chat_result:
+        return jsonify({"answer": chat_result['answer']})
+    else:
+        print("Error: call_gemini_api returned empty result for chat.")
+        return jsonify({"error": "Failed to get a response from Gemini."}), 500
+
 if __name__ == '__main__':
     app.run(debug=True)

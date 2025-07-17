@@ -31,6 +31,11 @@ const knownConceptsList = document.getElementById('knownConceptsList');
 const strugglingConceptsList = document.getElementById('strugglingConceptsList');
 const resetAllBtn = document.getElementById('resetAllBtn');
 
+// DOM Elements for Chat Section
+const chatInput = document.getElementById('chatInput');
+const sendChatBtn = document.getElementById('sendChatBtn');
+const chatResponse = document.getElementById('chatResponse');
+
 // --- UI Update Functions ---
 function updateUI() {
     // KG Section UI
@@ -228,6 +233,35 @@ async function generateLearningPath() {
     }
 }
 
+// --- Chat Interaction Function ---
+async function sendChatMessage() {
+    const question = chatInput.value.trim();
+    if (!question) {
+        chatResponse.innerHTML = `<p class="text-red-600">Please enter a question.</p>`;
+        return;
+    }
+
+    chatResponse.innerHTML = `<p class="text-blue-600">Gemini is thinking...</p>`;
+    try {
+        const response = await fetch('http://127.0.0.1:5000/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ question }),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`Backend error: ${response.status} - ${errorData.error || JSON.stringify(errorData)}`);
+        }
+
+        const result = await response.json();
+        chatResponse.innerHTML = `<p>${result.answer}</p>`;
+    } catch (err) {
+        console.error('Error sending chat message:', err);
+        chatResponse.innerHTML = `<p class="text-red-600">Failed to get a response: ${err.message}</p>`;
+    }
+}
+
 // --- Event Handlers ---
 kgTopicInput.addEventListener('input', (e) => {
     kgTopic = e.target.value;
@@ -259,6 +293,8 @@ resetAllBtn.addEventListener('click', () => {
     updateUI();
     learningPathSection.classList.add('hidden'); // Hide path section on reset
 });
+
+sendChatBtn.addEventListener('click', sendChatMessage);
 
 function handleCompleteConcept(concept) {
     userKnownConcepts.add(concept);

@@ -1,13 +1,14 @@
-# Learning Path Generator
+# Personalized Learning Path Generator
 
 ## Overview
-`learning_path_advanced.py` is a Flask-based web application that dynamically generates personalized learning paths and visualizes knowledge graphs for educational topics. It leverages the Gemini AI model to create structured knowledge graphs and learning paths based on user input.
+This project is a Flask-based web application that dynamically generates personalized learning paths and visualizes knowledge graphs for educational topics. It now includes a **Gemini Chat Interface**, allowing users to ask questions and receive AI-powered responses.
 
 ## Features
 - **Knowledge Graph Generation**: Dynamically generates a knowledge graph for a given topic, including prerequisites and resources (videos, articles, books).
 - **Learning Path Generation**: Creates a sequential learning path based on user goals, known concepts, and struggling concepts.
 - **Knowledge Graph Visualization**: Displays concepts as nodes with prerequisites and resources.
 - **Interactive UI**: Allows users to mark concepts as "complete" or "struggling" and regenerate learning paths accordingly.
+- **Gemini Chat Interface**: Enables users to ask questions and receive AI-powered responses based on the knowledge graph and Gemini's expertise.
 - **Caching**: Caches generated knowledge graphs for faster retrieval.
 
 ## Requirements
