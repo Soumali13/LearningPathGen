@@ -47,11 +47,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 
 ## API Endpoints
-- /generate_knowledge_graph (POST)
 
-- Description: Generates a knowledge graph for a given topic.
-- Request Body:
-- Response:
+/generate_knowledge_graph (POST)
+Description: Generates a knowledge graph for a given topic.
+Request Body:
+Response:
 {
   "topic": "Machine Learning"
 }
@@ -65,9 +65,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   }
 }
 
-- /generate_path (POST)
-- Description: Generates a learning path based on user input and the knowledge graph.
-- Request Body:
+/generate_path (POST)
+Description: Generates a learning path based on user input and the knowledge graph.
+Request Body:
 {
   "goal": "Understand Deep Learning",
   "known_concepts": ["Introduction to ML"],
