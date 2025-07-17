@@ -102,4 +102,5 @@ Request Body:
 For questions or feedback, contact soumali.cybernetics@gmail.com. 
 
 ## Screenshot
-<img width="1110" height="787" alt="Screenshot (2)" src="https://github.com/user-attachments/assets/1ab483c2-8854-47ca-9ee4-38ea289ffda0" />
+<img width="1890" height="760" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/34485db0-ee6b-4e51-97ec-5d08db56cf38" />
+
