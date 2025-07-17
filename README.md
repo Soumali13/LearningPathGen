@@ -48,7 +48,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## API Endpoints
 
+```bash
 /generate_knowledge_graph (POST)
+```
 Description: Generates a knowledge graph for a given topic.
 Request Body:
 Response:
