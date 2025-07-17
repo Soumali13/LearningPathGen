@@ -98,7 +98,7 @@ def call_gemini_api(prompt_text: str, response_schema: dict) -> dict:
         }
     }
 
-    api_key = "AIzaSyDoCNYecUmxS4FkwRvr7ESnQWL7Ju8QxI0" # This will be automatically populated by Canvas runtime
+    api_key = "Replace With Your API Key" # This will be automatically populated by Canvas runtime
     api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
 
     try:
