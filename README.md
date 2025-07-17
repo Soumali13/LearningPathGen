@@ -60,7 +60,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
     "Introduction to ML": {
       "prerequisites": [],
       "resources": [
-        {"type": "video", "title": "ML Basics Explained", "url": "https://www.youtube.com/watch?v=GwIo3gDZCVQ"}
       ]
     }
   }
@@ -94,4 +93,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - The application relies on the Gemini AI model, which requires a valid API key.
 
 ## Contact
-For questions or feedback, contact soumali.cybernetics@gmail.com. <img width="1110" height="787" alt="Screenshot (2)" src="https://github.com/user-attachments/assets/1ab483c2-8854-47ca-9ee4-38ea289ffda0" />
+For questions or feedback, contact soumali.cybernetics@gmail.com. 
+
+## Screenshot
+<img width="1110" height="787" alt="Screenshot (2)" src="https://github.com/user-attachments/assets/1ab483c2-8854-47ca-9ee4-38ea289ffda0" />
